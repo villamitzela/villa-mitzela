@@ -1,3 +1,64 @@
+// Temporary password protection
+(function () {
+  const PASSWORD = "villamitzela_2026";
+
+  if (sessionStorage.getItem("villaMitzelaAccess") === "granted") {
+    return;
+  }
+
+  document.documentElement.style.visibility = "hidden";
+
+  window.addEventListener("DOMContentLoaded", function () {
+    document.documentElement.style.visibility = "visible";
+
+    const overlay = document.createElement("div");
+    overlay.id = "password-screen";
+
+    overlay.innerHTML = `
+      <div class="password-box">
+        <div class="password-title">VILLA MITZELA</div>
+        <input type="password" id="site-password" placeholder="Password">
+        <button id="password-submit">Enter</button>
+        <div id="password-error"></div>
+      </div>
+    `;
+
+    document.body.appendChild(overlay);
+
+    const input = document.getElementById("site-password");
+    const button = document.getElementById("password-submit");
+    const error = document.getElementById("password-error");
+
+    function unlock() {
+      if (input.value === PASSWORD) {
+        sessionStorage.setItem("villaMitzelaAccess", "granted");
+        overlay.remove();
+      } else {
+        error.textContent = "Incorrect password";
+        input.value = "";
+        input.focus();
+      }
+    }
+
+    button.addEventListener("click", unlock);
+
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "Enter") {
+        unlock();
+      }
+    });
+
+    input.focus();
+  });
+})();
+
+  /* -------------------------
+      password code ends here
+    ------------------------- */
+
+
+
+
 function justifyGallery() {
 
   const galleries = document.querySelectorAll(".room-gallery");
