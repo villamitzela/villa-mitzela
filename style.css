@@ -512,7 +512,7 @@ background-position: left calc(100% - 3px);
 }
 
 .password-title {
-  font-family: "Garamond Premier Pro", Garamond, serif;
+  font-family: "Garamond Premier Pro Caption";
   font-size: 32px;
   margin-bottom: 40px;
 }
