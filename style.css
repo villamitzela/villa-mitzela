@@ -496,26 +496,51 @@ background-position: left calc(100% - 3px);
 
 /* Temporary password screen */
 
+/* Temporary password screen */
+
 #password-screen {
   position: fixed;
   inset: 0;
-  background: white;
   z-index: 99999;
-
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  font-family: "Garamond Premier Pro Caption";
 }
 
 .password-box {
+  width: 320px;
   text-align: center;
 }
 
-.password-title,
-#site-password,
-#password-submit,
+.password-title {
+  font-family: "Garamond Premier Pro Caption";
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+#site-password {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  border-bottom: 1px solid #222;
+  border-radius: 0;
+  padding: 8px 0;
+  background: transparent;
+  font: inherit;
+  outline: none;
+}
+
+#password-submit {
+  margin-top: 20px;
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+
 #password-error {
-  font-family: inherit;
+  margin-top: 15px;
+  font-size: 14px;
 }
