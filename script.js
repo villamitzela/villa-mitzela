@@ -14,14 +14,14 @@
     const overlay = document.createElement("div");
     overlay.id = "password-screen";
 
-    overlay.innerHTML = `
+    overlay.innerHTML = 
       <div class="password-box">
         <div class="password-title">VILLA MITZELA</div>
         <input type="password" id="site-password" placeholder="Password">
         <button id="password-submit">Enter</button>
         <div id="password-error"></div>
       </div>
-    `;
+    ;
 
     document.body.appendChild(overlay);
 
@@ -51,10 +51,6 @@
     input.focus();
   });
 })();
-
-  /* -------------------------
-      password code ends here
-    ------------------------- */
 
 
 
